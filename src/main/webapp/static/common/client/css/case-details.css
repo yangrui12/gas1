@@ -1,0 +1,71 @@
+.main .part_two h1,h2,h3,h4{
+    margin: 0;
+}
+.main .part_two .title{
+    width: 85%;
+    color: #000;
+}
+.main .part_two .title h4{
+    color: #999;
+}
+.main .part_two{
+    margin-top: 36px;
+}
+.main .part_two .case-text{
+    padding-right:  0;
+    padding-left: 0;
+    padding-top: 42px;
+}
+.main .part_two .case-text>a{
+    color: #999;
+}
+.main .part_two .case-text>a:hover{
+    color: #337ab7;
+    text-decoration: none;
+}
+.main .part_two .more-case li{
+    margin-top: 20px;
+}
+.main .part_two .more-case>li>a{
+    color: #000;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+    padding-left: 0;
+}
+.main .part_two .more-case>li>a:hover{
+    background-color: transparent;
+    color: #337ab7;
+
+}
+.main .part_two .more-case .case-pic{
+    padding-left: 0;
+}
+.main .part_two .content{
+    padding-top:26px;
+    padding-bottom: 26px;
+    width: 95%;
+}
+.main .part_two .design h4{
+    padding-bottom: 20px;
+}
+.main .part_two .design .design-pic{
+    padding-left: 0;
+}
+.main .part_two .design .design-pic p{
+    margin: 0;
+}
+.main .part_two .design .design-pic>a{
+    color: #999;
+}
+.main .part_two .design .design-pic>a:hover{
+    color: #337ab7;
+    text-decoration: none;
+}
+.main .part_two .design h4>a{
+    color: #000;
+}
+.main .part_two .design h4>a:hover{
+    color: #337ab7;
+    text-decoration: none;
+}

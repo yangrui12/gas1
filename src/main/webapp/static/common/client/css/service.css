@@ -1,0 +1,10 @@
+.part-two .service-content p{
+    margin-top: 16px;
+    font-size:12px;
+}
+.part-two .service-content h3{
+    font-weight: bold;
+}
+.part-two{
+    padding-bottom: 40px;
+}

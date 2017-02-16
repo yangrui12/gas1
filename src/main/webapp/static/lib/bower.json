@@ -1,0 +1,26 @@
+{
+  "name": "lib",
+  "description": "This is aud project",
+  "main": "index.js",
+  "authors": [
+    "Yuan Lunchuan <799652013@qq.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "aud"
+  ],
+  "homepage": "https://github.com/audTeam/audNorka",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "Ionicons": "ionicons#^2.0.1",
+    "bootstrap-fileinput": "^4.3.6"
+  }
+}

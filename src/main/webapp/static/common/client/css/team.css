@@ -1,0 +1,21 @@
+.part-one{
+    margin-top: 24px;
+}
+.part-one .team div{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.part-one .team div p{
+    margin: 0;
+}
+.part-one .team div>a{
+    color: #999;
+}
+.part-one .team div:nth-child(1){
+    color: #000;
+    font-weight: bold;
+}
+.part-one .team div>a:hover{
+    color: #00b3ee;
+    text-decoration: none;
+}

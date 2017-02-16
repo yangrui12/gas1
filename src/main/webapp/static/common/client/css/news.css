@@ -1,0 +1,80 @@
+.main{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.main h3{
+    margin-top: 0;
+    font-weight: bold;
+}
+.main .case-text{
+    padding-right:  0;
+    padding-left: 0;
+    font-size:12px;
+
+}
+.main .case-text h4{
+    font-weight: bold;
+    margin: 0;
+}
+
+.main .case-text p{
+    margin: 0;
+}
+.main .case-text p.date{
+    color: #999;
+}
+.main .case-text .text{
+    position: relative;
+    height:70px;
+}
+.main .case-text .text p{
+    position: absolute;
+    bottom: 0;
+}
+.main .case-text>a{
+    color: #999;
+}
+
+.main .more-case li:nth-child(1){
+    margin-top: 0;
+}
+.main .more-case li{
+    margin-top: 20px;
+}
+.main .more-case>li>a{
+    color: #000;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+    padding-left: 0;
+}
+.main .more-case>li>a:hover{
+    background-color: transparent;
+    color: #337ab7;
+
+}
+.main .more-case .case-pic{
+    padding-left: 0;
+}
+.main .news-tag{
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+.main .news-tag li{
+    border-bottom: 1px solid #ddd
+}
+.main .news-tag li>a>span{
+    padding-left: 104px;
+}
+.main .news-tag li>a{
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+.news-active{
+    color:#ca3726!important;
+}
+.main .news-tag li>a:hover{
+    background-color: transparent;
+    color:#ca3726;
+}

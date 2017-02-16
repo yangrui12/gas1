@@ -1,0 +1,27 @@
+.part_two{
+    padding-top: 20px;
+}
+.part_two p{
+    margin-top: 10px;
+    font-size: 12px;
+}
+.part_two .text a{
+    text-decoration: none;
+}
+.part_two .text a:hover p{
+    color: #337ab7;
+}
+.part_two .text-one{
+    color:#000;
+}
+.part_two .text-two{
+    color:#999a9f;
+}
+.part_two .news a{
+    color: #000;
+}
+.part_two .news a:hover,footer .list-one ul li a:hover{
+    color: #337ab7;
+    text-decoration: none;
+}
+

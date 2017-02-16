@@ -1,0 +1,42 @@
+.main{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.main h3{
+    margin-top: 0;
+    font-weight: bold;
+}
+.main .case-text{
+    padding-right:  0;
+    padding-left: 0;
+    padding-top:20px;
+    font-size:12px;
+}
+.main .case-text>a{
+    color: #999;
+}
+.main .case-text>a:hover{
+    color: #337ab7;
+    text-decoration: none;
+}
+.main .more-case li:nth-child(1){
+    margin-top:0;
+}
+.main .more-case li{
+    margin-top: 20px;
+}
+.main .more-case>li>a{
+    color: #000;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+    padding-left: 0;
+}
+.main .more-case>li>a:hover{
+    background-color: transparent;
+    color: #337ab7;
+
+}
+.main .more-case .case-pic{
+    padding-left: 0;
+}

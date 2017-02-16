@@ -1,0 +1,18 @@
+.part-one{
+    margin-top: 24px;
+}
+.part-one .all-case div{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.part-one .all-case div>a{
+    color: #999;
+}
+.part-one .all-case div:nth-child(1)>a{
+    color: #000;
+    font-weight: bold;
+}
+.part-one .all-case div>a:hover{
+    color: #00b3ee;
+    text-decoration: none;
+}

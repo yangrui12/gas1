@@ -1,0 +1,152 @@
+/*header*/
+ul{
+    list-style-type: none;
+}
+@media screen and (min-width: 1200px) {
+    .container{
+        padding-left: 94px;
+        padding-right: 95px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .Main-me{
+        display: block !important;
+    }
+}
+
+.navbar-brand{
+    padding:0;
+    height:auto;
+}
+.navbar{
+    margin-bottom: 0;
+    min-height: 0;
+}
+.nav_two{
+    background-color: #ca3727;
+    border-bottom: none;
+    font-size: 12px;
+    border-radius: 0px;
+    border-right:solid 1px #ca3727;
+    position: relative;
+}
+.nav_one {
+    background-color: #fff;
+    border: none;
+    position: relative;
+}
+
+
+.nav_two .ul_two>li>a{
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 26px;
+    color:#fff;
+}
+.ul_two{
+    width: 60%;
+    display: none;
+}
+.active{
+    color:#ca3727 !important;
+}
+.current{
+    display: block;
+}
+.ul_one li span{
+    padding: 20px 20px;
+    padding-left: 0px;
+}
+.search-form{
+    width: 300px;
+    position: absolute;
+    right:1%;
+    top:3px;
+}
+.search-input{
+    /*padding-top: 3px;*/
+    width: 300px;
+}
+.search-input input{
+    border-radius:10px;
+    height: 20px;
+    width: 130px;
+    line-height:20px;
+}
+.search-input label{
+    margin: 0;
+    padding-top: 4px;
+    padding-left: 8px;
+    color: #fff;
+}
+
+.ul-two{
+    position: relative;
+}
+.ul-three{
+    width: 150px;
+    position: absolute;
+    background-color: #ca3727;
+    display: none;
+    z-index:2000;
+
+}
+.ul-three>li>a{
+    float: none;
+    color:#fff;
+}
+.ul-three>li>a:hover{
+   background-color:transparent;
+   color:#ffcc00;
+}
+.current2{
+    display: block;
+}
+.active2{
+    color:#ffcc00 !important;
+}
+.Main-me{
+    position: absolute;
+    left:150px;
+    top:15px;
+    z-index: 999;
+    display:none;
+    padding-bottom: 42px;
+}
+.dropdown-toggle{
+    cursor: pointer;
+    color: #999;
+}
+.dropdown-menu li{
+    color: #ca3727;
+}
+.dropdown-menu li a{
+    color: #ca3727;
+}
+.dropdown-menu>li>a:hover{
+    background-color: #ca3727;
+    color: #fff;
+}
+.change-language{
+    position: absolute;
+    right: 1%;
+    top:16px;
+}
+.btn-language{
+    border-radius:20px;
+}
+
+/*footer*/
+footer ul{
+    padding-top: 20px;
+    border-top:solid 2px #ddd;
+    margin-top: 30px;
+    font-size: 12px;
+}
+footer .list-one ul li{
+    float: left;
+    padding-right: 20px;
+}
+footer .list-one ul li a{
+    color: #434343;
+}

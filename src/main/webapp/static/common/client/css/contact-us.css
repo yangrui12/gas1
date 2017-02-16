@@ -1,0 +1,22 @@
+.main{
+    margin-top:40px;
+    margin-bottom: 20px;
+}
+.main .info p{
+    padding-top: 20px;
+    margin-bottom: 0;
+}
+.main .info p span:nth-child(1){
+    padding-right: 10px;
+}
+.main .info p .asome{
+    padding-right: 10px;
+}
+.main .info p span{
+    font-size:12px;
+    font-weight: bold;
+}
+.main .input-text{
+    padding-right: 0;
+    text-align: left;
+}

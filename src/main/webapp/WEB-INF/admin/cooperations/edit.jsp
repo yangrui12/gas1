@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%String baseUrl = request.getContextPath(); %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AUD管理系统</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <c:import url="../shared/_stylesheet.jsp"></c:import>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <jsp:include page="../shared/_header.jsp"></jsp:include>
+  <jsp:include page="../shared/_aside.jsp"></jsp:include>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>编辑合作伙伴</h1>
+      <ol class="breadcrumb">
+        <li><a href="<%=baseUrl%>/admin/dashborad"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li><a href="<%=baseUrl%>/admin/aboutUs/historyIntroduce">公司基本信息</a></li>
+        <li class="active">编辑合作伙伴</li>
+      </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+      <!-- Your Page Content Here -->
+      <div class="box">
+        <div class="box-body">
+          <div class="row">
+	          <div class="col-md-12">
+	            <form action="${pageContext.request.contextPath}/admin/aboutUs/historyIntroduce/cooperations/${cooperation.id}/update" class="form-horizontal" method="post" enctype="multipart/form-data" id="form">
+	              <input class="form-control" name="id" type="hidden" value="${cooperation.id}">
+	              <div class="form-group">
+	                <label class="control-label col-md-3">合作伙伴名称</label>
+	                <div class="col-md-9">
+	                  <input class="form-control" name="name" type="text" value="${cooperation.name}">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label class="control-label col-md-3">合作伙伴链接</label>
+	                <div class="col-md-9">
+	                  <input class="form-control" name="link" type="text" value="${cooperation.link}">
+	                </div>
+	              </div>
+			      <c:if test="${cooperation.logoUrl != null}">
+			        <div class="form-group">
+					  <label class="col-md-3 control-label">公司图片</label>
+					  <div class="col-md-9">
+					    <img class="img-responsive" src="${pageContext.request.contextPath}/${cooperation.logoUrl}">
+					  </div>
+					</div>
+				  </c:if>
+	              <div class="form-group">
+	                <label class="col-md-3 control-label">合作伙伴logo</label>
+	                <div id="uploadFileDiv" class="col-md-9">
+	                  <input id="pdFile" name="file" type="file">
+	                  <div id="fileError" class="help-block"></div>
+	                  <p class="help-block"></p>
+	                 </div>
+	              </div>
+	              <div class="form-group">
+	                <div class="col=md-5 col-md-offset-5">
+	                  <button type="submit" class="btn btn-info">提交</button>
+	                </div>
+	              </div>
+	            </form>
+	          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <jsp:include page="../shared/_footer.jsp"></jsp:include>
+  <jsp:include page="../shared/_left_aside.jsp"></jsp:include>
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+<!-- REQUIRED JS SCRIPTS -->
+<c:import url="../shared/_javascript.jsp"></c:import>
+<script src="<%=baseUrl%>/static/common/admin/js/image_upload.js" type="text/javascript"></script>
+</body>
+</html>

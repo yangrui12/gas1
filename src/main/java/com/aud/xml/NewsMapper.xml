@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aud.mapper.NewsMapper" >
+  <resultMap id="BaseResultMap" type="com.aud.pojo.News" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="publish_at" property="publishAt" jdbcType="TIMESTAMP" />
+    <result column="head_img" property="headImg" jdbcType="VARCHAR" />
+    <result column="sub_title" property="subTitle" jdbcType="VARCHAR" />
+    <result column="navmenue_id" property="navmenueId" jdbcType="INTEGER" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="lang" property="lang" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, publish_at, head_img, sub_title, navmenue_id, content, lang
+  </sql>
+  <delete id="deleteByNavMenuId" parameterType="java.lang.Integer">
+    delete from news
+    where nav_menu_id = #{id,jdbcType=INTEGER}
+  </delete>
+  <select id="all" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select * from news where lang = #{lang, jdbcType=VARCHAR} ORDER BY publish_at DESC
+  </select>
+  <select id="selectByNewsCategoryId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from news
+    where navmenue_id = #{navmenue_id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from news
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from news
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aud.pojo.News" >
+    insert into news (id, title, publish_at, 
+      head_img, sub_title, navmenue_id, 
+      content, lang)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{publishAt,jdbcType=TIMESTAMP}, 
+      #{headImg,jdbcType=VARCHAR}, #{subTitle,jdbcType=VARCHAR}, #{navmenueId,jdbcType=INTEGER}, 
+      #{content,jdbcType=VARCHAR}, #{lang, jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aud.pojo.News" >
+    insert into news
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="publishAt != null" >
+        publish_at,
+      </if>
+      <if test="headImg != null" >
+        head_img,
+      </if>
+      <if test="subTitle != null" >
+        sub_title,
+      </if>
+      <if test="navmenueId != null" >
+        navmenue_id,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="lang != null" >
+        lang,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="publishAt != null" >
+        #{publishAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="headImg != null" >
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="subTitle != null" >
+        #{subTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="navmenueId != null" >
+        #{navmenueId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="lang != null" >
+        #{lang,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aud.pojo.News" >
+    update news
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="publishAt != null" >
+        publish_at = #{publishAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="headImg != null" >
+        head_img = #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="subTitle != null" >
+        sub_title = #{subTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="navmenueId != null" >
+        navmenue_id = #{navmenueId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="lang != null" >
+        lang = #{lang,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.aud.pojo.News" >
+    update news
+    set title = #{title,jdbcType=VARCHAR},
+      publish_at = #{publishAt,jdbcType=TIMESTAMP},
+      head_img = #{headImg,jdbcType=VARCHAR},
+      sub_title = #{subTitle,jdbcType=VARCHAR},
+      navmenue_id = #{navmenueId,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      lang = #{lang,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aud.pojo.News" >
+    update news
+    set title = #{title,jdbcType=VARCHAR},
+      publish_at = #{publishAt,jdbcType=TIMESTAMP},
+      head_img = #{headImg,jdbcType=VARCHAR},
+      sub_title = #{subTitle,jdbcType=VARCHAR},
+      navmenue_id = #{navmenueId,jdbcType=INTEGER}
+      lang = #{lang,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aud.mapper.HistoryIntroduceMapper" >
+  <resultMap id="BaseResultMap" type="com.aud.pojo.HistoryIntroduce" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="company_history" property="companyHistory" jdbcType="VARCHAR" />
+    <result column="cooperation_company" property="cooperationCompany" jdbcType="VARCHAR" />
+    <result column="video" property="video" jdbcType="VARCHAR" />
+    <result column="head_img" property="headImg" jdbcType="VARCHAR" />
+    <result column="service_head_img" property="serviceHeadImg" jdbcType="VARCHAR" />
+    <result column="service_content" property="serviceContent" jdbcType="VARCHAR" />
+    <result column="lang" property="lang" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, company_history, cooperation_company, video, head_img, service_head_img, service_content, lang
+  </sql>
+
+  <select id="all" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select 
+    <include refid="Base_Column_List" />
+    from history_introduces where lang = #{lang, jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from history_introduces
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from history_introduces
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aud.pojo.HistoryIntroduce" >
+    insert into history_introduces (id, company_history, cooperation_company, 
+      video, head_img, service_head_img, service_content, lang)
+    values (#{id,jdbcType=INTEGER}, #{companyHistory,jdbcType=VARCHAR}, #{cooperationCompany,jdbcType=VARCHAR}, 
+      #{video,jdbcType=VARCHAR}, #{headImg,jdbcType=VARCHAR}, #{serviceHeadImg, jdbcType=VARCHAR}, #{serviceContent, jdbcType=VARCHAR}, #{lang, jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.aud.pojo.HistoryIntroduce" >
+    insert into history_introduces
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="companyHistory != null" >
+        company_history,
+      </if>
+      <if test="cooperationCompany != null" >
+        cooperation_company,
+      </if>
+      <if test="video != null" >
+        video,
+      </if>
+      <if test="headImg != null" >
+        head_img,
+      </if>
+      <if test="serviceHeadImg != null" >
+        service_head_img,
+      </if>
+      <if test="serviceContent != null" >
+        service_content,
+      </if>
+      <if test="lang != null" >
+        lang,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="companyHistory != null" >
+        #{companyHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperationCompany != null" >
+        #{cooperationCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="video != null" >
+        #{video,jdbcType=VARCHAR},
+      </if>
+      <if test="headImg != null" >
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceHeadImg != null" >
+        #{serviceHeadImg,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceContent != null" >
+        #{serviceContent,jdbcType=VARCHAR},
+      </if>
+      <if test="lang != null" >
+        #{lang,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aud.pojo.HistoryIntroduce" >
+    update history_introduces
+    <set >
+      <if test="companyHistory != null" >
+        company_history = #{companyHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="cooperationCompany != null" >
+        cooperation_company = #{cooperationCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="video != null" >
+        video = #{video,jdbcType=VARCHAR},
+      </if>
+      <if test="headImg != null" >
+        head_img = #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceHeadImg != null" >
+        service_head_img = #{serviceHeadImg,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceContent != null" >
+        service_content = #{serviceContent,jdbcType=VARCHAR},
+      </if>
+      <if test="lang != null" >
+        lang = #{lang,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aud.pojo.HistoryIntroduce" >
+    update history_introduces
+    set company_history = #{companyHistory,jdbcType=VARCHAR},
+      cooperation_company = #{cooperationCompany,jdbcType=VARCHAR},
+      video = #{video,jdbcType=VARCHAR},
+      head_img = #{headImg,jdbcType=VARCHAR},
+      service_head_img = #{serviceHeadImg,jdbcType=VARCHAR},
+      service_content = #{serviceContent,jdbcType=VARCHAR},
+      lang = #{lang,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

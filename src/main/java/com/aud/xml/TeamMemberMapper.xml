@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aud.mapper.TeamMemberMapper" >
+  <resultMap id="BaseResultMap" type="com.aud.pojo.TeamMember" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="zh_address" property="zhAddress" jdbcType="VARCHAR" />
+    <result column="cn_address" property="cnAddress" jdbcType="VARCHAR" />
+    <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
+    <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+    <result column="card" property="card" jdbcType="VARCHAR" />
+    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+    <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+    <result column="lang" property="lang" jdbcType="VARCHAR" />
+    <result column="nav_menu_id" property="navMenuId" jdbcType="INTEGER" />
+    <result column="honor" property="honor" jdbcType="VARCHAR" />
+    <result column="good_at" property="goodAt" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.aud.pojo.TeamMember" extends="BaseResultMap" >
+    <result column="brief" property="brief" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, position, zh_address, cn_address, phone_number, img_url, card, created_at, 
+    updated_at, lang, nav_menu_id, honor, good_at
+  </sql>
+  <sql id="Blob_Column_List" >
+    brief
+  </sql>
+  <delete id="deleteByNavMenuId" parameterType="java.lang.Integer">
+    delete from team_members
+    where nav_menu_id = #{id,jdbcType=INTEGER}
+  </delete>
+  <select id="getMaxId" resultType="java.lang.Integer">
+    select id from team_members ORDER BY id DESC limit 0,1
+  </select>
+  <select id="all" resultMap="ResultMapWithBLOBs">
+    select *
+    from team_members
+  </select>
+  <select id="getTeamMemberByTeamId" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select *
+    from team_members
+    where nav_menu_id = #{teamId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from team_members
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from team_members
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aud.pojo.TeamMember" >
+    insert into team_members (id, name, position, 
+      zh_address, cn_address, phone_number, 
+      img_url, card, created_at, 
+      updated_at, lang, nav_menu_id, 
+      honor, good_at, brief
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{zhAddress,jdbcType=VARCHAR}, #{cnAddress,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, 
+      #{imgUrl,jdbcType=VARCHAR}, #{card,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, 
+      #{updatedAt,jdbcType=TIMESTAMP}, #{lang,jdbcType=VARCHAR}, #{navMenuId,jdbcType=INTEGER}, 
+      #{honor,jdbcType=VARCHAR}, #{goodAt,jdbcType=VARCHAR}, #{brief,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.aud.pojo.TeamMember" keyProperty="id" >
+    insert into team_members
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="zhAddress != null" >
+        zh_address,
+      </if>
+      <if test="cnAddress != null" >
+        cn_address,
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number,
+      </if>
+      <if test="imgUrl != null" >
+        img_url,
+      </if>
+      <if test="card != null" >
+        card,
+      </if>
+      <if test="createdAt != null" >
+        created_at,
+      </if>
+      <if test="updatedAt != null" >
+        updated_at,
+      </if>
+      <if test="lang != null" >
+        lang,
+      </if>
+      <if test="navMenuId != null" >
+        nav_menu_id,
+      </if>
+      <if test="honor != null" >
+        honor,
+      </if>
+      <if test="goodAt != null" >
+        good_at,
+      </if>
+      <if test="brief != null" >
+        brief,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="zhAddress != null" >
+        #{zhAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cnAddress != null" >
+        #{cnAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrl != null" >
+        #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="card != null" >
+        #{card,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null" >
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null" >
+        #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lang != null" >
+        #{lang,jdbcType=VARCHAR},
+      </if>
+      <if test="navMenuId != null" >
+        #{navMenuId,jdbcType=INTEGER},
+      </if>
+      <if test="honor != null" >
+        #{honor,jdbcType=VARCHAR},
+      </if>
+      <if test="goodAt != null" >
+        #{goodAt,jdbcType=VARCHAR},
+      </if>
+      <if test="brief != null" >
+        #{brief,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aud.pojo.TeamMember" >
+    update team_members
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="zhAddress != null" >
+        zh_address = #{zhAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cnAddress != null" >
+        cn_address = #{cnAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrl != null" >
+        img_url = #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="card != null" >
+        card = #{card,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null" >
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null" >
+        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lang != null" >
+        lang = #{lang,jdbcType=VARCHAR},
+      </if>
+      <if test="navMenuId != null" >
+        nav_menu_id = #{navMenuId,jdbcType=INTEGER},
+      </if>
+      <if test="honor != null" >
+        honor = #{honor,jdbcType=VARCHAR},
+      </if>
+      <if test="goodAt != null" >
+        good_at = #{goodAt,jdbcType=VARCHAR},
+      </if>
+      <if test="brief != null" >
+        brief = #{brief,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.aud.pojo.TeamMember" >
+    update team_members
+    set name = #{name,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      zh_address = #{zhAddress,jdbcType=VARCHAR},
+      cn_address = #{cnAddress,jdbcType=VARCHAR},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      card = #{card,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      lang = #{lang,jdbcType=VARCHAR},
+      nav_menu_id = #{navMenuId,jdbcType=INTEGER},
+      honor = #{honor,jdbcType=VARCHAR},
+      good_at = #{goodAt,jdbcType=VARCHAR},
+      brief = #{brief,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aud.pojo.TeamMember" >
+    update team_members
+    set name = #{name,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      zh_address = #{zhAddress,jdbcType=VARCHAR},
+      cn_address = #{cnAddress,jdbcType=VARCHAR},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      card = #{card,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      lang = #{lang,jdbcType=VARCHAR},
+      nav_menu_id = #{navMenuId,jdbcType=INTEGER},
+      honor = #{honor,jdbcType=VARCHAR},
+      good_at = #{goodAt,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
