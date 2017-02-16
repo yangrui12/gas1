@@ -30,6 +30,7 @@ public class AboutUsController {
 
 	@RequestMapping(value = "/historyIntroduce", method = RequestMethod.GET)
 	public String edit(ModelMap model, Locale locale) {
+		System.out.println("test git");
 		List<HistoryIntroduce> all = this.historyIntroduceMapper.all(locale.getLanguage());
 		if (all.size() > 0) {
 			model.addAttribute("historyIntroduce", all.get(0));
