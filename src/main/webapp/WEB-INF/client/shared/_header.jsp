@@ -9,7 +9,7 @@
   <div class="container">
     <nav class="navbar navbar-default nav_one" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="<%=baseUrl%>/sites"><img alt="Brand" src="<%=baseUrl%>/static/common/client/images/sites/pic1_02.png"></a>
+        <a class="navbar-brand" href="<%=baseUrl%>/sites"><img height="40px" width="112px" alt="Brand" src="<%=baseUrl%>/static/common/client/images/sites/cng.jpg"></a>
       </div>
       <div class=" Main-me">
         <div class="dropdown-toggle" data-toggle="dropdown">Main-me</div>
@@ -30,7 +30,7 @@
           <c:forEach var="newsNavMenu" items="${newsNavMenus}">
         	<li><a href="<%=baseUrl%>/client/newsCategories/${newsNavMenu.id}" class="second-nav">${newsNavMenu.name}</a>
           </c:forEach>
-          <li><spring:message code="aboutAud" /></li>
+          <li><spring:message code="aboutGCY" /></li>
           <li><a href="<%=baseUrl%>/client/aboutUs">--<spring:message code="companyIntroduce" /></a></li>
           <li><a href="<%=baseUrl%>/client/aboutUs/service">--<spring:message code="companyService" /></a></li>
           <li><a href="<%=baseUrl%>/client/aboutUs/contactUs">--<spring:message code="contactUs" /></a></li>
@@ -42,7 +42,7 @@
           <li><a href="<%=baseUrl%>/client/projects"><span data-tag="0"><spring:message code="projects" /></span></a></li>
           <li><a href="<%=baseUrl%>/client/teams"><span data-tag="1"><spring:message code="teams" /></span></a></li>
           <li><a href="<%=baseUrl%>/client/newsCategories/${newsNavMenus[0].id}"><span data-tag="2"><spring:message code="news" /></span></a></li>
-          <li><a href="<%=baseUrl%>/client/aboutUs"><span data-tag="3"><spring:message code="aboutAud" /></span></a></li>
+          <li><a href="<%=baseUrl%>/client/aboutUs"><span data-tag="3"><spring:message code="aboutGCY" /></span></a></li>
           <li><a href="<%=baseUrl%>/client/jobs"><span data-tag="4"><spring:message code="jobs" /></span></a></li>
         </ul>
       </div>
@@ -60,7 +60,7 @@
 
     <nav class="navbar navbar-default nav_two" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="<%=baseUrl%>/client"> <img width="112px" alt="Brand" src="<%=baseUrl%>/static/common/client/images/sites/pic2_03.png">
+        <a class="navbar-brand" href="<%=baseUrl%>/client"> <img  height="15px" width="112px" alt="Brand" src="<%=baseUrl%>/static/common/client/images/sites/pic2_13.png">
         </a>
       </div>
       <ul class="nav navbar-nav ul_two" data-tag="1">

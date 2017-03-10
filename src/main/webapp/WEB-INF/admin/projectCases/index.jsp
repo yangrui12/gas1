@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AUD管理系统</title>
+  <title>GCY管理系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <c:import url="../shared/_stylesheet.jsp"></c:import>
@@ -23,10 +23,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>案例分类列表</h1>
+      <h1>检验信息</h1>
       <ol class="breadcrumb">
         <li><a href="<%=baseUrl%>/admin/dashborad"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li class="active">分类列表</li>
+        <li class="active">检验信息</li>
       </ol>
     </section>
 
@@ -38,15 +38,18 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-12">
-              <a href="<%=baseUrl%>/admin/projectCases/new" class="btn btn-info col-md-offset-10">新增分类</a>
+              <a href="<%=baseUrl%>/admin/projectCases/new" class="btn btn-info col-md-offset-10">新增检验信息</a>
             </div>
           </div>
           <div class="col-md-12">
             <table class="table table-striped table-hover">
               <tr>
                 <td>#</td>
-                <td>分类名称</td>
-                <td>分类简介</td>
+                <td>用户ID</td>
+                <td>姓名</td>
+                <td>电话</td>
+                <td>家庭住址</td>
+                <td>邮箱</td>
                 <td>操作</td>
               </tr>
               <c:forEach var="navMenu" items="${pages.list}">

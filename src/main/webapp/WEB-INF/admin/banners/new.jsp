@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AUD管理系统</title>
+  <title>GCY管理系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <c:import url="../shared/_stylesheet.jsp"></c:import>
@@ -23,11 +23,11 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>新增banner</h1>
+      <h1>新增气瓶</h1>
       <ol class="breadcrumb">
         <li><a href="<%=baseUrl%>/admin/dashborad"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li><a href="<%=baseUrl%>/admin/banners">banner列表</a></li>
-        <li class="active"><span>新增banner</span></li>
+        <li><a href="<%=baseUrl%>/admin/banners">气瓶列表</a></li>
+        <li class="active"><span>新增气瓶<span></li>
       </ol>
     </section>
 

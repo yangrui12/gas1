@@ -6,6 +6,8 @@
 <script type="text/javascript" src="<%=baseUrl%>/static/lib/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script type="text/javascript" src="<%=baseUrl%>/static/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- sure delete -->
+<script type="text/javascript" src="<%=baseUrl%>/static/common/admin/js/suredelete.js"></script>
 <!-- AdminLTE App -->
 <script src="<%=baseUrl%>/static/lib/bower_components/AdminLTE/dist/js/app.min.js"></script>
 <script src="<%=baseUrl%>/static/lib/bower_components/bootstrap-fileinput/js/fileinput.min.js" type="text/javascript"></script>

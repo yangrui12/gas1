@@ -7,9 +7,16 @@ public class User {
 
     private String password;
 
-    private String root;
+    private Integer roleId;
+    
 
-    public Integer getId() {
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", role_id="
+				+ roleId + "]";
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -33,11 +40,12 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getRoot() {
-        return root;
-    }
+   
+	public Integer getRoleId() {
+		return roleId;
+	}
 
-    public void setRoot(String root) {
-        this.root = root == null ? null : root.trim();
-    }
+	public void setRoleId(Integer role_id) {
+		this.roleId = role_id;
+	}
 }

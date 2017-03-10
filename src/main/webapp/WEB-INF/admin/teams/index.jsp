@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AUD管理系统</title>
+  <title>GCY管理系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <c:import url="../shared/_stylesheet.jsp"></c:import>
@@ -22,10 +22,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>团队列表</h1>
+      <h1>加气信息</h1>
       <ol class="breadcrumb">
         <li><a href="<%=baseUrl%>/admin/dashborad"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li>团队列表</li>
+        <li>加气信息</li>
       </ol>
     </section>
 
@@ -54,7 +54,7 @@
                     <td>${team.name}</td>
                     <td>
                       <a class="btn btn-default" href="<%=baseUrl%>/admin/teams/${team.id}/edit">编辑</a>
-                      <a class="btn btn-info" href="<%=baseUrl%>/admin/teams/${team.id}/teamMembers">团队管理</a>
+                      <a class="btn btn-info" href="<%=baseUrl%>/admin/teams/${team.id}/teamMembers">加气管理</a>
                       <form action="<%=baseUrl%>/admin/teams/${team.id}" method="post" style="display: inline-block;">
                         <input type="hidden" name="_method" value="DELETE">
                         <button class="btn btn-danger" type="submit">删除</button>

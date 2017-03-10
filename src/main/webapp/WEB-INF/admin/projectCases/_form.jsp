@@ -8,19 +8,19 @@
     <input type="hidden" name="id" value="${navMenu.id}">
   </c:if>
   <div class="form-group">
-    <label class="col-md-3 control-label">案例分类名称</label>
+    <label class="col-md-3 control-label">用户ID</label>
     <div class="col-md-9">
       <input class="form-control" type="text" name="name" value="${navMenu.name}">
     </div>
   </div>
   <div class="form-group">
-    <label class="col-md-3 control-label">案例简介</label>
+    <label class="col-md-3 control-label">姓名</label>
     <div class="col-md-9">
       <textarea class="form-control" rows="3" name="navMenuDesc">${navMenu.navMenuDesc}</textarea>
     </div>
   </div>
   <div class="form-group">
-    <label class="col-md-3 control-label">案例分类描述</label>
+    <label class="col-md-3 control-label">电话</label>
     <div class="col-md-9">
       <script id="container" name="content" type="text/plain" name="content">${navMenu.content}</script>
     </div>

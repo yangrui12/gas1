@@ -8,7 +8,7 @@
     <input class="form-control" type="hidden" name="id" value="${team.id}">
   </c:if>
   <div class="form-group">
-    <label class="control-label col-md-4">团队名称</label>
+    <label class="control-label col-md-4">加气信息</label>
     <div class="col-md-8">
       <input class="form-control" type="text" name="name" value="${team.name}">
     </div>

@@ -10,7 +10,7 @@
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>A</b>LT</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>AUD</b></span>
+    <span class="logo-lg"><b>GCY</b></span>
   </a>
 
   <!-- Header Navbar -->
@@ -135,7 +135,7 @@
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-right">
-                <a href="<%=baseUrl%>/admin/sessions/${sessionScope.userId}/logOut" class="btn btn-default btn-flat">退出</a>
+                <a href="<%=baseUrl%>/admin/sessions/logOut" class="btn btn-default btn-flat">退出</a>
               </div>
             </li>
           </ul>

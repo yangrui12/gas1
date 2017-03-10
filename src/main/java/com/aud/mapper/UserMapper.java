@@ -2,8 +2,6 @@ package com.aud.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
-
 import com.aud.pojo.User;
 
 public interface UserMapper {
@@ -22,4 +20,8 @@ public interface UserMapper {
     List<User> selectByUser(User user);
     
     List<User> all();
+
+	List<User> getByUserName(String userName);
+
+	List<User> selectBySelective(User user);
 }

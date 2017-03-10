@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AUD管理系统</title>
+  <title>GCY管理系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <c:import url="../shared/_stylesheet.jsp"></c:import>
@@ -25,7 +25,7 @@
       <h1>新增用户</h1>
       <ol class="breadcrumb">
         <li><a href="<%=baseUrl%>/admin/dashborad"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li class="active"><a href="<%=baseUrl%>/admin/users">团队列表</a></li>
+        <li class="active"><a href="<%=baseUrl%>/admin/users">用户列表</a></li>
       </ol>
     </section>
 

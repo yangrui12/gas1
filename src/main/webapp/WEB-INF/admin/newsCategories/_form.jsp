@@ -8,7 +8,7 @@
     <input type="hidden" name="id" value="${newsCategory.id}">
   </c:if>
   <div class="form-group">
-    <label class="col-md-4 control-label">新闻类型</label>
+    <label class="col-md-4 control-label">类型</label>
     <div class="col-md-8">
       <input type="text" name="name" value="${newsCategory.name}" class="form-control">
     </div>

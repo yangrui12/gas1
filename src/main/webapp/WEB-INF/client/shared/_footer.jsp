@@ -10,8 +10,8 @@
                         <li>友情链接:</li>
                         <li><a href="#">百度</a></li>
                         <li><a href="#">腾讯新闻</a></li>
-                        <li><a href="#">中国建筑网</a></li>
-                        <li><a href="#">中国建筑论坛</a></li>
+                        <li><a href="#">中国燃气</a></li>
+                        <li><a href="#">中国石化</a></li>
                         <li><a href="${pageContext.request.contextPath}/admin/sessions/new">管理端登录</a></li>
                     </ul>
                 </div>

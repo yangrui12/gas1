@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AUD管理系统</title>
+  <title>GCY管理系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <c:import url="../shared/_stylesheet.jsp"></c:import>
@@ -22,11 +22,11 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>创建团队</h1>
+      <h1>创建加气信息</h1>
       <ol class="breadcrumb">
         <li><a href="<%=baseUrl%>/admin/dashborad"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li><a href="<%=baseUrl%>/admin/teams">团队列表</a></li>
-        <li class="active">新增团队</li>
+        <li><a href="<%=baseUrl%>/admin/teams">加气信息列表</a></li>
+        <li class="active">新增加气信息</li>
       </ol>
     </section>
 
