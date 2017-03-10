@@ -79,9 +79,9 @@
 				</div>
 
 				<select class="form-control" name="roleId">
-					<option value="">所有角色</option>
-					<c:forEach var="role" items="${user}">
-						<td>${role.roleId}</td>
+					<option value="0">--所有角色--</option>
+					<c:forEach var="role" items="${roles}">
+						<option value="${role.roles}">${role.roles}</option>
 					</c:forEach>
 				</select>
 				
