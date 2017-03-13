@@ -10,7 +10,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>AUD管理系统</title>
+<title>GCY管理系统</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
@@ -25,12 +25,12 @@
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
-				<h1>新闻动态</h1>
+				<h1>动态</h1>
 				<ol class="breadcrumb">
 					<li><a href="<%=baseUrl%>/admin/dashborad"><i
 							class="fa fa-dashboard"></i> 首页</a></li>
 					<li><a href="<%=baseUrl%>/admin/newsCategories">分类列表</a></li>
-					<li class="active">新闻列表</li>
+					<li class="active">列表</li>
 				</ol>
 			</section>
 			<!-- Main content -->
@@ -42,7 +42,7 @@
 							<div class="col-md-12">
 								<a
 									href="<%= baseUrl%>/admin/newsCategories/${newsCategory.id}/news/new"
-									class="btn btn-info col-md-offset-10">发布新闻</a>
+									class="btn btn-info col-md-offset-10">发布</a>
 							</div>
 						</div>
 						<div class="row">

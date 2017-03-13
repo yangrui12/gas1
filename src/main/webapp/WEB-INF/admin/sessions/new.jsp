@@ -72,14 +72,14 @@
 						name="password" value=""> <span
 						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
-				
+				<%-- 
 			    <select class="form-control" name="roles">
 					<option value="0">--所有角色--</option>
 					<c:forEach var="role" items="${roles}">
 						<option value="${role.roles}">${role.roles}</option>
 					</c:forEach>
 				</select>
-				
+				 --%>
 				 <br>
 				 
 				<div class="row">

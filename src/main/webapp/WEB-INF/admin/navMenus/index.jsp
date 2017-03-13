@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AUD管理系统</title>
+  <title>GCY管理系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <c:import url="../shared/_stylesheet.jsp"></c:import>
@@ -54,7 +54,7 @@
                     <td>
                       <c:if test="${menu.parentNav=='1'}">项目案例</c:if>
                       <c:if test="${menu.parentNav=='2'}">团队管理</c:if>
-                      <c:if test="${menu.parentNav=='3'}">新闻动态</c:if>
+                      <c:if test="${menu.parentNav=='3'}">动态</c:if>
                     </td>
                     <td>${menu.name}<td>
                     <td>

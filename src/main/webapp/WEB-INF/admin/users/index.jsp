@@ -74,7 +74,7 @@
 										<tr>
 											<td>${user.id}</td>
 											<td>${user.name}</td>
-											<td>${user.roleId}</td>
+											<td>${user.roles.roles}</td>
 											<td><a class="btn btn-default"
 												href="${pageContext.request.contextPath}/admin/users/${user.id}/edit">编辑</a>
 												<a class="btn btn-danger deletebutton"

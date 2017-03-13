@@ -15,7 +15,7 @@
       <select class="form-control" name="parentnav">
         <option value="1" <c:if test="${navMenu.parentnav=='1' }">selected</c:if>>项目案例</option>
         <option value="2" <c:if test="${navMenu.parentnav=='2' }">selected</c:if>>团队管理</option>
-        <option value="3" <c:if test="${navMenu.parentnav=='3' }">selected</c:if>>新闻动态</option>
+        <option value="3" <c:if test="${navMenu.parentnav=='3' }">selected</c:if>>动态</option>
       </select>
     </div>
   </div>

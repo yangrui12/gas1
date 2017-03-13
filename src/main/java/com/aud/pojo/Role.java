@@ -13,11 +13,13 @@ public class Role {
         this.id = id;
     }
 
-    public String getRoles() {
-        return roles;
-    }
+	public String getRoles() {
+		return roles;
+	}
 
-    public void setRoles(String roles) {
-        this.roles = roles == null ? null : roles.trim();
-    }
+	public void setRoles(String roles) {
+		this.roles = roles;
+	}
+
+
 }

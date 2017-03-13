@@ -14,21 +14,21 @@
     </div>
   </div>
   <div class="form-group">
-    <label class="col-md-2 control-label">新闻摘要</label>
+    <label class="col-md-2 control-label">摘要</label>
     <div class="col-md-10">
       <input type="text" name="subTitle" value="${news.subTitle}" class="form-control">
     </div>
   </div>
   <c:if test="${news.headImg != null}">
   <div class="form-group">
-    <label class="col-md-2 control-label">头图图片</label>
+    <label class="col-md-2 control-label">图片</label>
     <div class="col-md-20">
       <img alt="banner图片" class="img-responsive" src="${pageContext.request.contextPath}/${news.headImg}">
     </div>
   </div>
   </c:if>
   <div class="form-group">
-    <label class="col-md-2 control-label">头图图片</label>
+    <label class="col-md-2 control-label">图片</label>
     <div id="uploadFileDiv" class="col-md-10">
       <input id="pdFile" name="file" type="file">
       <div id="fileError" class="help-block"></div>
