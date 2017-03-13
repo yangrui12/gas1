@@ -7,6 +7,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.aud.mapper.RoleMapper;
 import com.aud.mapper.UserMapper;
 import com.aud.pojo.User;
 import com.aud.service.IUserService;
@@ -15,7 +16,9 @@ import com.aud.service.IUserService;
 public class UserServiceImpl implements IUserService {
 	@Autowired
 	private UserMapper userMapper;
-
+	@Autowired
+	private RoleMapper roleMapper;
+	
 	@Override
 	public List<User> all() {
 		return null;
@@ -29,9 +32,8 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Set<String> getRoles(String userName) {
 		Set<String> roles = new HashSet<>();
-		if (this.getByUserName(userName).get(0).getRoleId() != null) {
-			roles.add("admin");
-		}
+		User user = this.getByUserName(userName).get(0);
+		roles.add(roleMapper.selectByPrimaryKey(user.getRoleId()).getRoles());
 		return roles;
 	}
 

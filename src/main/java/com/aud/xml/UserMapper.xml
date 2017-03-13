@@ -6,15 +6,16 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <association property="roles" javaType="com.aud.pojo.Role" resultMap="com.aud.mapper.RoleMapper.BaseResultMap" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, password,role_id
+    id, name, password,role_id,roles
   </sql>
   <select id="all" resultMap="BaseResultMap" parameterType="com.aud.pojo.User" >
-    select * from users
+    select * from users 
   </select>
-   <select id="selectBySelective" resultMap="BaseResultMap" parameterType="com.aud.pojo.User" >
-    select * from users
+   <select id="selectBySelective" resultMap="BaseResultMap" parameterType="com.aud.pojo.User">
+    select * from users inner join roles on users.role_id = roles.id
     <where>
       <if test="roleId!=null and roleId!=''">
         role_id = #{roleId}

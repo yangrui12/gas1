@@ -61,7 +61,7 @@
 					aria-hidden="true"></i> <span>首页</span>
 			</a>
 			</li>
-			<shiro:hasRole name="admin">
+			<shiro:hasAnyRoles  name="管理员,监管人员">
 				<!-- Optionally, you can add icons to the links -->
 				<li
 					<c:if test="${fn:contains(currentUrl, 'users')}">class="active"</c:if>>
@@ -69,7 +69,7 @@
 						aria-hidden="true"></i> <span>用户</span>
 				</a>
 				</li>
-			</shiro:hasRole>
+			</shiro:hasAnyRoles >
 			
 			<li
 				<c:if test="${fn:contains(currentUrl, 'banners')}">class="active"</c:if>>

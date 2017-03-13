@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.aud.mapper.RoleMapper;
 import com.aud.mapper.UserMapper;
-import com.aud.pojo.Distribution;
-import com.aud.pojo.Project;
 import com.aud.pojo.User;
 import com.aud.tool.CryptographyUtil;
 import com.github.pagehelper.PageHelper;
@@ -42,6 +40,8 @@ public class UsersController {
 		PageInfo<User> page = new PageInfo<User>(list);
 		
 		model.addAttribute("pages", page);
+		System.out.println("this.roleMapper.all()   "+this.roleMapper.all());
+		System.out.println("list  "+ list);
 		model.addAttribute("userId", user);
 		return "admin/users/index";
 	}

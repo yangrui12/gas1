@@ -72,13 +72,8 @@
 						name="password" value=""> <span
 						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
-				<div class="form-group has-feedback">
-					<input type="password" class="form-control" placeholder="角色"
-						name="roleId" value=""> <span
-						class="glyphicon glyphicon-lock form-control-feedback"></span>
-				</div>
-
-				<select class="form-control" name="roleId">
+				
+			    <select class="form-control" name="roles">
 					<option value="0">--所有角色--</option>
 					<c:forEach var="role" items="${roles}">
 						<option value="${role.roles}">${role.roles}</option>

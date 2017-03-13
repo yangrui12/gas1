@@ -8,12 +8,16 @@ public class User {
     private String password;
 
     private Integer roleId;
-    
+
+    private Role  roles;
+	
+
+
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", password=" + password + ", role_id="
-				+ roleId + "]";
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", roleId=" + roleId + ", roles="
+				+ roles + "]";
 	}
 
 	public Integer getId() {
@@ -48,4 +52,14 @@ public class User {
 	public void setRoleId(Integer role_id) {
 		this.roleId = role_id;
 	}
+
+	public Role getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Role roles) {
+		this.roles = roles;
+	}
+
+
 }

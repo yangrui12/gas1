@@ -38,7 +38,7 @@
 	            /admin/sessions/**=anon
 	            /admin/sessions=anon
 				/admin*/**=authc
-				/admin/users/**=roles[admin]
+				/admin/users/**=roles[管理员,监管人员]
 	        </value>  
 	    </property>
 	</bean>  

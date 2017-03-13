@@ -8,11 +8,15 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.aud.mapper.RoleMapper;
 import com.aud.mapper.UserMapper;
+import com.aud.pojo.Role;
 import com.aud.pojo.User;
 import com.aud.tool.CryptographyUtil;
 
@@ -21,9 +25,9 @@ import com.aud.tool.CryptographyUtil;
 public class SessionsController {
 	@Autowired
 	private UserMapper userMapper;
-
+	
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public String login(User user, HttpServletRequest request, String backUrl, RedirectAttributes redirectAttributes) {
+	public String login(@RequestParam("roles")  Role  roles, User user, HttpServletRequest request, String backUrl, RedirectAttributes redirectAttributes) {
 		Subject subject = SecurityUtils.getSubject();
 		user.setPassword(CryptographyUtil.md5(user.getPassword(), "aud"));
 		UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPassword());
@@ -33,7 +37,7 @@ public class SessionsController {
 			user = this.userMapper.getByUserName(user.getName()).get(0);
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("name", user.getName());
-			session.setAttribute("isRoleId", user.getRoleId());
+			session.setAttribute("roles", user.getRoles());
 			backUrl = (backUrl == null || ("".equals(backUrl))) ? "/admin/dashborad" : "/" + backUrl;
 			return "redirect:" + backUrl;
 		} catch (Exception e) {
@@ -41,9 +45,13 @@ public class SessionsController {
 			return "redirect:/admin/sessions/new";
 		}
 	}
-
+	@Autowired
+	private RoleMapper roleMapper;
 	@RequestMapping(value = { "/new", "", "/" }, method = RequestMethod.GET)
-	public String newPage() {
+	public String newPage(ModelMap model) {
+		User user = new User();
+		model.addAttribute("users", this.userMapper.selectBySelective(user));
+		model.addAttribute("roles", this.roleMapper.all());
 		return "admin/sessions/new";
 	}
 
