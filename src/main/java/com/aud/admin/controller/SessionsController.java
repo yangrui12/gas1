@@ -36,7 +36,7 @@ public class SessionsController {
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("name", user.getName());
 			session.setAttribute("roles", user.getRoles());
-			backUrl = (backUrl == null || ("".equals(backUrl))) ? "/admin/dashborad" : "/" + backUrl;
+			backUrl = (backUrl == null || ("".equals(backUrl))) ? "/admin/homepage" : "/" + backUrl;
 			return "redirect:" + backUrl;
 		} catch (Exception e) {
 			redirectAttributes.addFlashAttribute("errorMessage", "账号密码错误");

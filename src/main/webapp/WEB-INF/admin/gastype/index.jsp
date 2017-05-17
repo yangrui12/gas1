@@ -44,11 +44,11 @@
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
-				<h1>生产列表</h1>
+				<h1>气种列表</h1>
 				<ol class="breadcrumb">
 					<li><a href="<%=baseUrl%>/admin/dashborad"><i
 							class="fa fa-dashboard"></i> 首页</a></li>
-					<li class="active">生产管理</li>
+					<li class="active">气种管理</li>
 				</ol>
 			</section>
 
@@ -107,40 +107,26 @@
 
 
 							<div class="row">
-								<div class="col-md-4">
-
-									<div class="form-group">
-										<label for="exampleInputEmail1" class="col-md-4 text-right">气瓶条码</label>
-										<div class="col-md-8">
-											<input type="text" class="form-control" name="id"
-												value="${distribution.id}" placeholder="气瓶条码">
-										</div>
-									</div>
-
-								</div>
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label for="exampleInputEmail1" class="col-md-4 text-right">气瓶编号</label>
+										<label for="exampleInputEmail1" class="col-md-4 text-right">气体类型</label>
 										<div class="col-md-8">
 											<input type="text" class="form-control" name="name"
-												value="${distribution.name}" placeholder="气瓶编号">
+												value="${distribution.name}" placeholder="气体类型">
 										</div>
 									</div>
 								</div>
 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label for="exampleInputEmail1" class="col-md-4 text-right">充装介质</label>
+										<label for="exampleInputEmail1" class="col-md-4 text-right">库存量</label>
 										<div class="col-md-8">
 											<input type="text" class="form-control" name="driver"
-												value="${distribution.driver}" placeholder="充装介质">
+												value="${distribution.driver}" placeholder="库存量">
 										</div>
 									</div>
 								</div>
-
-
-
 
 
 								<div class="col-md-4">
@@ -176,17 +162,17 @@
                                 
                                 <div class="col-md-4">
 									<div class="form-group">
-										<label for="exampleInputEmail1" class="col-md-4 text-right">检验人</label>
+										<label for="exampleInputEmail1" class="col-md-4 text-right">检验标准</label>
 										<div class="col-md-8">
 											<input type="text" class="form-control" name="dispatcher"
-												value="${distribution.dispatcher}" placeholder="检验人">
+												value="${distribution.dispatcher}" placeholder="检验标准">
 										</div>
 									</div>
 								</div>
                                 
 								<div class="col-md-4">
 									<div class="form-group">
-										<label for="exampleInputEmail1" class="col-md-4 text-right">生产日期</label>
+										<label for="exampleInputEmail1" class="col-md-4 text-right">日期</label>
 										<div class="col-md-6">
 											<div class='input-group date' id='datetimepicker9'>
 												<input type='text' class="form-control"
@@ -218,7 +204,14 @@
 									<table class="table table-strip table-hover">
 										<tr>
 											<td>序号</td>
-											<td>名称</td>
+											<td>气体名称</td>
+											<td>库存量</td>
+											<td>规格</td>
+											<td>单位</td>
+											<td>库区</td>
+											<td>检验标准</td>
+											<td>日期</td>
+											<td>备注</td>
 											<td>操作</td>
 										</tr>
 										<c:forEach var="banner" items="${banners }">

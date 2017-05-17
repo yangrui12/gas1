@@ -22,11 +22,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>${team.name}---团队成员列表</h1>
+      <h1>编辑用户</h1>
       <ol class="breadcrumb">
         <li><a href="<%=baseUrl%>/admin/dashborad"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li><a href="<%=baseUrl%>/admin/teams">团队列表</a></li>
-        <li class="active">成员列表</li>
+        <li class="active"><a href="<%=baseUrl%>/admin/users">用户列表</a></li>
       </ol>
     </section>
 
@@ -37,43 +36,16 @@
       <div class="box">
         <div class="box-body">
           <div class="row">
-           <div class="col-md-12">
-             <a class="btn btn-default col-md-offset-10" href="<%=baseUrl%>/admin/teams/${team.id}/teamMembers/new">新增用户</a>
-           </div>
-          </div>
-          <div class="row">
             <div class="col-md-12">
-              <table class="table table-striped table-hover">
-                <tr>
-                  <td>#</td>
-                  <td>名字</td>
-                  <td>擅长领域</td>
-                  <td>操作</td>
-                </tr>
-                <c:forEach var="teamMember" items="${pages.list}">
-                  <tr>
-                    <td>${teamMember.id}</td>
-                    <td>${teamMember.name}</td>
-                    <td>${teamMember.goodAt}</td>
-                    <td>
-                      <a href="<%=baseUrl%>/admin/teams/${team.id}/teamMembers/${teamMember.id}/edit" class="btn btn-default">编辑</a>
-                      <form action="<%=baseUrl%>/admin/teams/${team.id}/teamMembers/${teamMember.id}" method="POST" style="display: inline-block;">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger">删除</button>
-                      </form>
-                    </td>
-                  </tr>
-                </c:forEach>
-              </table>
+              <c:import url="_form.jsp">
+                <c:param name="actionUrl" value="${pageContext.request.contextPath}/admin/users/${user.id}/update"></c:param>
+                <c:param name="method" value="PATCH"></c:param>
+              </c:import>
             </div>
-            <div class="col-md-12">
-	          <c:import url="../shared/_page.jsp">
-	            <c:param name="pageUrl" value="${pageContext.request.contextPath}/admin/teams/${team.id}/teamMembers"></c:param>
-	          </c:import>
-	        </div>
           </div>
         </div>
       </div>
+
     </section>
     <!-- /.content -->
   </div>
@@ -83,8 +55,11 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+
 <!-- REQUIRED JS SCRIPTS -->
 
 <c:import url="../shared/_javascript.jsp"></c:import>
+<script src="<%=baseUrl%>/static/common/admin/js/multi_image_upload.js" type="text/javascript"></script>
+
 </body>
 </html>
